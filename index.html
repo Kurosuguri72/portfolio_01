@@ -4,34 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ポートフォリオ１</title>
+    <title>BC PORTFOLIO 01</title>
     <link rel="stylesheet" href="./css/ress.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
   </head>
   <body>
     <div class="wrapper">
       <div class="box-header">
         <div class="header-logo">
-          <label for="nav0"><img src="./image/sample_quest.png"></label>
+          <label for="nav0"><img src="./image/logo_Epicstone2.png"></label>
         </div>
         <div class="box-nav">
           <nav>
-            <label class="nav-item" for="nav1">Home</label>
-            <label class="nav-item" for="nav2">Profile</label>
-            <label class="nav-item" for="nav3">Concept</label>
-            <label class="nav-item" for="nav4">Grumble</label>
+            <label class="navi-item" for="nav1">Home</label>
+            <label class="navi-item" for="nav2">Profile</label>
+            <label class="navi-item" for="nav3">Concept</label>
+            <label class="navi-item" for="nav4">Grumble</label>
           </nav>
         </div><!-- end "box-nav" -->
         <div class="drawer-menu">
           <div id="sp-icon" class="sp-close"><span></span></div>
           <ul id="navi-menu">
-            <li><label class="nav-item-sp" for="nav1">Home</label></li>
-            <li><label class="nav-item-sp" for="nav2">Profile</label></li>
-            <li><label class="nav-item-sp" for="nav3">Concept</label></li>
-            <li><label class="nav-item-sp" for="nav4">Grumble</label></li>
+            <li><label class="navi-item-sp" for="nav1">Home</label></li>
+            <li><label class="navi-item-sp" for="nav2">Profile</label></li>
+            <li><label class="navi-item-sp" for="nav3">Concept</label></li>
+            <li><label class="navi-item-sp" for="nav4">Grumble</label></li>
           </ul>
         </div>
       </div><!-- end "box-header" -->
@@ -46,7 +45,7 @@
           <p id="catchcopy">Choice your Heaven.</p>
         </article>
         <article class="main-content" id="about">
-            <h2 font-bold>Profile</h2>
+            <h2>Profile</h2>
             <div class="grid-table">
               <div class="column-a font-bold"><p>誕生日</p></div>
               <div class="column-b"><p>令和元年　2月 22日</p></div>
@@ -63,19 +62,19 @@
           <div class="grid-table">
             <div class="column-a prod-item">
               <img class="service-image" src="image/01_wind.png">
-              <p class="font-bold">疾きこと風の如く</p>
+              <p>疾きこと風の如く</p>
             </div>
             <div class="column-b prod-item">
               <img class="service-image" src="image/02_forest.png">
-              <p class="font-bold">徐かなること林の如く</p>
+              <p>徐かなること林の如く</p>
             </div>
             <div class="column-c prod-item">
               <img class="service-image" src="image/03_fire.png">
-              <p class="font-bold">侵掠すること火の如く</p>
+              <p>侵掠すること火の如く</p>
             </div>
             <div class="column-d prod-item">
               <img class="service-image" src="image/04_mountain.png">
-              <p class="font-bold">動かざること山の如し</p>
+              <p>動かざること山の如し</p>
             </div>
           </div>
         </article>
@@ -84,19 +83,19 @@
           <div class="contact-form-box">
             <div class="input-form">
               <label>
-                <input type="text" id="user-name" placeholder="お名前" required>
-                <i class="fas fa-user" aria-hidden="true"></i>
+                <input type="text" id="user-name" placeholder="Enter Your Name" required>
+                <i class="fas fa-user-circle" aria-hidden="true"></i>
               </label>
             </div>
             <div class="input-form">
               <label>
-                <input type="email" id="user-email" placeholder="メールアドレス" required>
-                <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                <input type="email" id="user-email" placeholder="E-mail address" required>
+                <i class="far fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
               </label>
             </div>
             <div class="input-form">
               <label>
-                <textarea cols="42" id="user-opinion" name="opinion" placeholder="上を向いて歩こう" required></textarea>
+                <textarea cols="42" id="user-opinion" name="opinion" placeholder="SUKIYAKI" required></textarea>
               </label>
             </div>
             <label for="mdl-on" class="push-button" id="submit-check">ぼやく</label>
@@ -105,7 +104,7 @@
       </div><!-- end "box-mainscreen" -->
       <div class="box-footer">
         <footer>
-          <p><small>&copy; 2019 hogehoge corp.</small></p>
+          <p><small>&copy; 2019 BLACK CURRANT Co.,Ltd.</small></p>
         </footer>
       </div><!-- end "box-footer" -->
   <!-- -------------------------------モーダル部分 -------------------------------- -->
@@ -141,7 +140,7 @@
           </div>
           <div class="modal-content" id="phase-success">
             <h3 class="mdl-h3">送信に成功しました</h3>
-            <label for="mdl-off" class="push-button">　OK　</label>
+            <label for="mdl-off" class="push-button" id="mdl-end">　OK　</label>
           </div>
           <div class="modal-content" id="phase-failed">
             <h3 class="mdl-h3">送信に失敗しました</h3>

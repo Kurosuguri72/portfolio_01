@@ -82,6 +82,19 @@ $(function () {
     });
 });
 
+// 送信後のOKボタンでモーダルを元に戻す
+$(function () {
+  $('#mdl-end').click(
+    function () {
+      $('#mdl-off').prop('checked', true);
+      $('#mdl-top').prop('checked', true);
+      $("#user-name").val("");
+      $("#user-email").val("");
+      $("#user-opinion").val("");
+    });
+});
+
+
 // 「送信」ボタンで入力内容を確定＋ajaxで通信
 // $(function () {
 //   $('#submit-confirm').click(

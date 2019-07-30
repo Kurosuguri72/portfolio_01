@@ -1,14 +1,12 @@
 @font-face {
   font-family: 'Noto Sans Japanese';
   src: local('NotoSansJP-Regular.otf'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format('woff2'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format('woff'),
-    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format('opentype');
+    url(../fonts/NotoSansJP-Regular.woff2) format('woff2'),
+    url(../fonts/NotoSansJP-Regular.woff) format('woff'),
+    url(../fonts/NotoSansJP-Regular.otf) format('opentype');
 }
 @font-face {
   font-family: 'Anurati Regular';
-  font-style: normal;
-  font-weight: normal;
   src: local('Anurati Regular'),
   url('../fonts/Anurati-Regular.woff') format('woff');
 }
@@ -30,7 +28,6 @@ h2 {
 /*navi-menuにあたるラジオボタンを全て消す*/
 input[name="navi-menu"] {
   display: none;
-  // display: block;
 }
 
 .wrapper {
@@ -56,7 +53,7 @@ input[name="navi-menu"] {
   display: grid;
   grid-template-columns: 30% 1fr 55%;
 
-  background: rgba(40, 40, 60, 0.8);
+  background: rgba(40, 40, 60, 0.95);
   text-align: center;
   vertical-align: middle;
   box-shadow: 0 0 5px  rgba(#eee,0.2);
@@ -67,7 +64,8 @@ input[name="navi-menu"] {
 }
 .header-logo img{
   padding: 10px;
-  height: 4.4rem
+  height: 4.4rem;
+  width : 360px;
 }
 .box-nav {
   grid-column: 3/4; //.box-herder grid
@@ -75,8 +73,6 @@ input[name="navi-menu"] {
 .box-mainscreen {
   grid-area: main;
   grid-column: 1/4; //.wrapper grid
-
-  background: rgba(0, 0, 0, 0.5);
 }
 .box-footer {
   grid-area: footer;
@@ -91,7 +87,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.nav-item{
+.navi-item{
   height: 4.4rem;
   margin: 0 4px;
 
@@ -100,25 +96,14 @@ nav {
   line-height: 4.8rem;
   font-weight: bold;
 
-  border-bottom: 5px solid #5ab4bd;
-  color: #555;
+  border-bottom: 5px solid rgba(40, 150, 150,0.8);
+  color: #588;
+  transition: all 0.3s;
 }
-.nav-item:hover {
-  border-bottom: 3px solid #5ab4bd;
-  color: #333;
-  opacity: 1;
-}
-.nav-item-sp {
-  /* テキスト位置 */
-  text-align: center;
-  line-height: 4.6rem;
-  font-weight: bold;
-
-  color: #555;
-}
-.nav-item-sp:hover {
-  color: #333;
-  opacity: 1;
+.navi-item:hover {
+  border-bottom: 1.2rem solid rgba(40, 150, 150, 0.8);
+  color: rgb(184, 209, 226);
+  transition: all 0.2s;
 }
 /*PCサイズではハンバーガーメニュー非表示*/
 .drawer-menu {
@@ -146,6 +131,7 @@ article{
   height: 100%;
   text-align: center;
   padding: 10px 2%;
+  background: rgba(30, 30, 50, 0.95);
 }
 
 article#home {
@@ -161,6 +147,7 @@ article#home p {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 80%;
+  letter-spacing: 0.1em;
 
   /* calc関数でフォントサイズを動的に指定 */
   font-size: calc(32px + 1.5vw);
@@ -169,12 +156,11 @@ article#home p {
 article#home #catchcopy{
   -webkit-transform: translate(-50%, 30%);
   transform: translate(-50%, 30%);
-  font-size:  150%;
+  /* calc関数でフォントサイズを動的に指定 */
+  font-size: calc(8px + 1.5vw);
+  line-height: calc(100% + 6vh);
 }
 
-article#about {
-  background: rgba(85, 100, 134, 0.3);
-}
 article#about .grid-table{
   display: grid;
   grid-template-columns: 30% 1fr;
@@ -213,9 +199,6 @@ article#about p{
   height: 100%;
 }
 
-article#product {
-  background: rgba(85, 100, 134, 0.3);
-}
 article#product .grid-table {
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
@@ -258,9 +241,6 @@ article#product .service-image{
 }
 
 
-article#contact {
-  background: rgba(85, 100, 134, 0.3);
-}
 article#contact .contact-form-box{
   max-width: 600px;
   padding: 20px 20px;
@@ -283,17 +263,17 @@ article#contact .input-form input,
   padding: 0.3em;
   transition: 0.3s;
   border: 1px solid #99add3;
-  border-radius: 4px;
+  border-radius: 2px;
   outline: none;
   resize: none;
 }
 article#contact .input-form input:focus,
 #user-opinion:focus {
-  border-color: #008fd3;
-  box-shadow:0px 0px 0px 1px #008fd3;
+  border-color: #00d358;
+  box-shadow:0px 0px 0px 1px #00d394;
 }
 article#contact .input-form input:focus~i {
-  color: #008fd3;
+  color: #00d394;
 }
 article#contact .input-form input {
   padding-left: 40px;
@@ -307,10 +287,33 @@ article#contact .input-form i {
   transition: 0.3s;
   color: #aaaaaa;
 }
-.fa-user::before {
+.fa-user-circle::before {
   font-size: 1.35rem;
-  padding-left: 1px;
 }
+
+/*---nav drawer menu----------------------------------------------------------------------*/
+
+  ul#navi-menu {
+    list-style-type: none;
+    position: absolute;
+    background: rgba(44, 77, 109, 1.0);
+    left: 100vw;
+    margin-left: -40%;
+    width: 40%;
+    top: 4.4rem;
+    z-index: 990;
+    display: none;
+    opacity:  0.8;
+  }
+  .navi-item-sp {
+    /* テキスト位置 */
+    text-align: center;
+    line-height: 4.6rem;
+    font-weight: bold;
+
+    color: #eee;
+  }
+
 
 /*---media query for iPad----------------------------------------------------------------------*/
 
@@ -325,18 +328,6 @@ article#contact .input-form i {
 
   .header-logo {
     grid-column: 1/4;
-  }
-
-  ul#navi-menu {
-    list-style-type: none;
-    position: absolute;
-    background: rgba(245, 245, 255, 0.9);
-    left: 100vw;
-    margin-left: -40%;
-    width: 40%;
-    top: 4.4rem;
-    z-index: 990;
-    display: none;
   }
 
   article#home p {
@@ -382,6 +373,9 @@ article#contact .input-form i {
   html {
     font-size: 90%;
   }
+  .header-logo img {
+    width: calc(80px + 50vw);
+  }
 
   .box-mainscreen {
     padding-top: 4.4rem;
@@ -395,15 +389,9 @@ article#contact .input-form i {
   }
 
   ul#navi-menu {
-    list-style-type: none;
-    position: absolute;
-    background: rgba(245, 245, 255, 1.0);
     left: 100%;
     margin-left: -100%;
     width: 100%;
-    top: 4.4rem;
-    z-index: 990;
-    display: none;
   }
 
   article#home p {
@@ -481,11 +469,6 @@ ul#navi-menu a {
   display: block;
   min-width: 100%;
   min-height: 4.4rem;
-}
-
-ul#navi-menu li a:hover {
-  background: #a9a9a9;
-  opacity: 0.7;
 }
 
 
@@ -575,7 +558,7 @@ div.sp-open span:after {
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,20,30,0.3);
   opacity: 0;
   transition: opacity 0.3s, transform 0s 0.5s;
   transform: scale(0);
@@ -594,11 +577,14 @@ div.sp-open span:after {
   max-height: auto;
   padding: 30px 15px 15px;
   box-sizing: border-box;
-  background: #eee;
+  background: rgb(0, 10, 10);
+  border: solid 1px #378f8f;
+  box-shadow: 0 0 5px rgba(#378f8f, 0.8);
   line-height: 1.4em;
-  transition: 0.2s;
   border-radius: 6px;
   text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .mdl-grid{
   display: grid;
@@ -661,20 +647,21 @@ div.sp-open span:after {
   max-width: 200px;
   height: 36px;
   font-size: 16px;
+  font-weight: 400;
   text-decoration: none;
-  font-weight: 700;
   margin-top: 20px;
   padding: 4px 20px;
-  border-radius: 8px;
-  border-top: 1px solid #555;
-  border-left: 1px solid #555;
-  border-right: 1px solid #555;
-  border-bottom: 3px solid #555;
-  color: #555;
+  border-radius: 4px;
+  border: 2px #528aaf solid;
+  background: #223147;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
-.push-button:active{
-  transform: translateY(3px);
-  border-bottom: 1px solid #555;}
+.push-button:hover{
+  box-shadow: 0 0 4px 1px rgba(209, 237, 241, 0.8);
+  cursor: pointer;
+}
+
 .mdl-h3 {
   margin: 12px;
 }
@@ -701,27 +688,7 @@ div.sp-open span:after {
 .modal-wrap input#mdl-success:checked ~ #phase-success,
 .modal-wrap input#mdl-failed:checked ~ #phase-failed {
   display: block;
-  transition: opacity 0.3s;
-}
-
-.open_button{
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 30px;
-    margin: auto;
-    padding: 8px 16px;
-    color: #444;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    border-radius: 4px;
-    cursor: pointer;
+  transition: all 0.3s;
 }
 
 /*-----------------loading anime-------------------*/
@@ -729,10 +696,12 @@ div.sp-open span:after {
   position: relative;
   align-self: center;
   box-sizing: border-box;
-  background: #eee;
   line-height: 1.4em;
   transition: 0.2s;
   border-radius: 6px;
+  background: rgb(0, 10, 10);
+  border: solid 1px  #378f8f;
+  box-shadow: 0 0 5px rgba(#378f8f, 0.8);
   text-align: center;
 }
 .loader,
@@ -755,7 +724,7 @@ margin-top: 20px;
   border-top: 1.1em solid rgba(91, 165, 255, 0.2);
   border-right: 1.1em solid rgba(91, 165, 255, 0.2);
   border-bottom: 1.1em solid rgba(91, 165, 255, 0.2);
-  border-left: 1.1em solid #5ba5ff;
+  border-left: 1.1em solid #4acf98;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
